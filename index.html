@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Rai | Portfolio</title>
+
+  <style>
+    :root {
+      --bg-main: #f1f5f9;
+      --bg-card: #ffffff;
+      --primary: #1e293b;
+      --secondary: #475569;
+      --accent: #3b82f6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--bg-main);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .skill {
+      background: var(--bg-main);
+      padding: 12px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #e2e8f0;
+      color: #334155;
+      margin-top: 40px;
+    }
+
+    /* Fade animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Shivam Rai</h1>
+    <p>Frontend Android Developer | Kotlin </p>
+    <p>Frontend Web Developer | HTML • CSS • JavaScript</p>
+  </header>
+
+  <section class="fade">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate frontend app developer specializing in Kotlin, with a strong focus on building clean, responsive, and user-friendly applications. I also develop modern, responsive websites using HTML, CSS, and JavaScript, and actively practice Data Structures and Algorithms in C++ to strengthen my problem-solving skills.
+      </p>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="card">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">Kotlin</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">C++</div>
+        <div class="skill">Python</div>
+        <div class="skill">C</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="card">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Survey Central</h3>
+          <p>A survey website that allows users to submit responses through interactive forms. Implemented a clean UI and responsive layout using HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="card">
+          <h3>Monthly Expense Tracker App – UI/UX Design</h3>
+          <p>Designed a clean and user-friendly UI for a Monthly Expense Tracker mobile app using Figma, focusing on easy expense entry, category-wise tracking, and clear monthly summaries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="card" style="text-align:center">
+      <h2>Contact</h2>
+      <p><strong>Primary Email:</strong> <a>shivamrai46865@gmail.com</a></p>
+      <p><strong>Secondary Email:</strong> <a>shivam.25001240@kiet.edu</a></p>
+      <br />
+      <a href="https://www.linkedin.com/in/shivamrai46865" class="btn" target="_blank">LinkedIn</a>
+      <a href="https://github.com/shivamrai46865" class="btn" target="_blank" style="margin-left:10px">GitHub</a>
+      <a href="https://leetcode.com/u/shivamrai46865/" class="btn" target="_blank" style="margin-left:10px">LeetCode</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Shivam Rai</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(fade => observer.observe(fade));
+  </script>
+
+</body>
+</html>
